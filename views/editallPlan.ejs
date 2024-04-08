@@ -1,0 +1,308 @@
+
+
+
+<%- include('partials/header')%>
+
+     <!-- Application container -->
+     <div class="container-fluid container-application">
+        
+      <!-- Sidenav -->
+<div class="sidenav" id="sidenav-main">
+  <!-- Sidenav header -->
+  <div class="sidenav-header d-flex align-items-center">
+      <a class="navbar-brand" href="/dashboard">
+      </a>
+      <div class="ml-auto">
+          <!-- Sidenav toggler -->
+          <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin"
+              data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                  <i class="bg-white sidenav-toggler-line"></i>
+                  <i class="bg-white sidenav-toggler-line"></i>
+                  <i class="bg-white sidenav-toggler-line"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- User mini profile -->
+  <div class="text-center sidenav-user d-flex flex-column align-items-center justify-content-between">
+      <!-- Avatar -->
+      <div>
+          <a href="#" class="avatar rounded-circle avatar-xl">
+              <i class="fas fa-user-circle fa-4x"></i>
+          </a>
+          <div class="mt-4">
+              <h5 class="mb-0 text-white"> <%=user.fullname%></h5>
+              <span class="mb-3 text-sm text-white d-block opacity-8">online</span>
+              <a href="#" class="shadow btn btn-sm btn-white btn-icon rounded-pill hover-translate-y-n3">
+                  <span class="btn-inner--icon"><i class="bi bi-database"></i></span>
+                  <span
+                      class="btn-inner--text"><%=user.balance%></span>
+              </a>
+          </div>
+      </div>
+      <!-- User info -->
+      <!-- Actions -->
+      <div class="mt-4 w-100 actions d-flex justify-content-between">
+          
+          
+      </div>
+  </div>
+  <!-- Application nav -->
+  <div class="clearfix nav-application">
+      <a href="/adminRoute"
+          class="text-sm btn btn-square active">
+          <span class="btn-inner--icon d-block"><i class="bi bi-house-door" style="font-size: xx-large;"></i></span>
+          <span class="pt-2 btn-inner--icon d-block">Home</span>
+      </a>
+      <a href="/allFunding"
+          class="text-sm btn btn-square   ">
+          <span class="btn-inner--icon d-block"><i class="bi bi-box-arrow-in-down" style="font-size: xx-large;"></i></span>
+          <span class="pt-2 btn-inner--icon d-block">Deposit</span>
+      </a>
+                  <a href="/allWidthdrawals"
+              class="text-sm btn btn-square  ">
+              <span class="btn-inner--icon d-block"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></span>
+              <span class="pt-2 btn-inner--icon d-block">Withdraw</span>
+          </a>
+              <a href="/accounthistory/<%user._id%>"
+          class="text-sm btn btn-square ">
+          <span class="btn-inner--icon d-block"><i class="fas fa-money-check-alt fa-2x"></i></span>
+          <span class="pt-2 btn-inner--icon d-block">Transactions</span>
+      </a>
+               
+      <a href="/account-settings/<%=user._id%>"
+          class="text-sm btn btn-square ">
+          <span class="btn-inner--icon d-block"><i class="fas fa-address-card fa-2x"></i></span>
+          <span class="pt-2 btn-inner--icon d-block">Profile</span>
+      </a>
+                  <a href="//all-plans"
+              class="text-sm btn btn-square ">
+              <span class="btn-inner--icon d-block"><i class="bi bi-grid" style="font-size: xx-large;"></i></span>
+              <span class="pt-2 btn-inner--icon d-block">Trading Plans</span>
+          </a>
+
+     
+  </div>
+ 
+</div>
+      <!-- Content -->
+      <div class="main-content position-relative">
+          <!-- Main nav -->
+          <!-- Main nav -->
+<nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border" id="navbar-main">
+  <div class="container-fluid">
+      <!-- Brand + Toggler (for mobile devices) -->
+      <div class="pl-4 d-block d-md-none">
+          <a class="navbar-brand" href="/dashboard">
+          </a>
+      </div>
+      <!-- <i class="bi bi-database"></i> -->
+      <!-- User's navbar -->
+      <div class="ml-auto navbar-user d-lg-none">
+          <ul class="flex-row navbar-nav align-items-center">
+              <li class="nav-item">
+                  <a href="#" class="nav-link nav-link-icon sidenav-toggler" data-action="sidenav-pin"
+                      data-target="#sidenav-main"><i class="bi bi-list"></i></a>
+              </li>
+
+                                  <li class="nav-item dropdown dropdown-animate">
+                                                  <a class="nav-link nav-link-icon" data-toggle="dropdown" href="#"
+                              aria-expanded="false">
+                              <i class="fas fa-layer-group"></i>
+                              <strong style="font-size:8px;">KYC</strong>
+                          </a>
+                          <div class="p-0 dropdown-menu dropdown-menu-right dropdown-menu-lg dropdown-menu-arrow">
+                              <div class="p-2">
+                                  <h5 class="mb-0 heading h6">KYC Verification</h5>
+                              </div>
+                              <div class="pb-2 mt-0 text-center list-group list-group-flush">
+                                                                          <div class="">
+                                          <a href="/allVerify"
+                                              class="btn btn-primary btn-sm">Verify
+                                              Account </a>
+                                      </div>
+                                                                  </div>
+                          </div>
+                                          </li>
+              
+              <li class="nav-item dropdown dropdown-animate">
+                  <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span class="avatar avatar-sm rounded-circle">
+                          <i class="fas fa-user-circle fa-2x"></i>
+                      </span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
+                      <h6 class="px-0 dropdown-header">Hi, <%=user.fullname%>!</h6>
+                      <a href="/account-settings/<%=user._id%>" class="dropdown-item">
+                          <i class="far fa-user"></i>
+                          <span>My profile</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+
+                      <a class="dropdown-item text-danger" href="/logout">
+                          <i class="bi bi-box-arrow-right"></i>
+                          <span>Logout</span>
+                      </a>
+                      <!-- <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                          <input type="hidden" name="_token" value="ReptCVSSq8glr4DkmT9zpnABZgVkwKvtci1Dl9qp">
+                      </form> -->
+                  </div>
+              </li>
+          </ul>
+      </div>
+      <!-- Navbar nav -->
+      <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
+
+          <!-- Right menu -->
+          <ul class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex">
+              <li class="nav-item">
+                  <a href="#" class="nav-link nav-link-icon sidenav-toggler" data-action="sidenav-pin"
+                      data-target="#sidenav-main"><i class="bi bi-list"></i></a>
+              </li>
+
+                                  <li class="nav-item dropdown dropdown-animate">
+                                                  <a class="nav-link nav-link-icon" data-toggle="dropdown" href="#"
+                              aria-expanded="false">
+                              <i class="fas fa-layer-group"></i>
+                              <strong style="font-size:8px;">KYC</strong>
+                          </a>
+                          <div class="p-0 dropdown-menu dropdown-menu-right dropdown-menu-lg dropdown-menu-arrow">
+                              <div class="p-2">
+                                  <h5 class="mb-0 heading h6">KYC Verification</h5>
+                              </div>
+                              <div class="pb-2 mt-0 text-center list-group list-group-flush">
+                                                                          <div class="">
+                                          <a href="/allVerify"
+                                              class="btn btn-primary btn-sm">Verify
+                                              Account </a>
+                                      </div>
+                                                                  </div>
+                          </div>
+                                          </li>
+              
+              <li class="nav-item dropdown dropdown-animate">
+                  <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <div class="media media-pill align-items-center">
+                          <span class="avatar rounded-circle">
+                              <i class="fas fa-user-circle fa-2x"></i>
+                          </span>
+                          <div class="ml-2 d-none d-lg-block">
+                              <span class="mb-0 text-sm font-weight-bold"><%=user.fullname%></span>
+                          </div>
+                      </div>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
+                      <h6 class="px-0 dropdown-header">Hi, <%=user.fullname%>!</h6>
+                      <a href="/account-settings/<%=user._id%>" class="dropdown-item">
+                          <i class="far fa-user"></i>
+                          <span>My profile</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+
+                      <a class="dropdown-item text-danger" href="/logout"></i>
+                          <span>Logout</span>
+                      </a>
+                   
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+
+          <!-- Page content -->
+          <div class="page-content">
+            
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2 text-gray">Editing: investment plan</h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+  </div>
+</div>
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active"> </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <!-- <b>Last Updated:</b> -->
+      <b>PlanId:</b> <b class="text-white"><%=plan._id%></b>
+    </div>
+  </div>
+
+</div>
+
+
+<form action="/edit-plan/<%=plan._id%>?_method=PUT" method="POST">   
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="text">Plan Type</label>
+      <input type="text" class="form-control" id="type" name="type" value=" <%=plan.type%> " placeholder="Payment Method" readonly required>
+    </div>
+
+    <div class="col">
+      <label for="text">Amount</label>
+      <input type="text" class="form-control" id="amount" name="amount" value=" <%=plan.amount%> " placeholder="Amount" readonly required>
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+
+      <div class="col">
+    <label for="number"> Number </label>
+    <input type="text" class="form-control" id="number" name="number" value=" <%=plan.number%> " placeholder="Number" readonly required>
+  </div>
+
+  <div class="col">
+    <label for="text">Plan Status </label>
+    <input type="text" class="form-control" id="status" name="status" value=" <%=plan.status%> " placeholder="Status" required>
+  </div>
+
+</div>
+
+  <div class="form-group mb-4">
+    <button type="submit" class="btn btn-primary">Update Plan</button>
+
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">Delete Plan</button>
+
+  </div>
+
+</form>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">You are about to remove an investment plan record.</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          This will remove the width record of <b class="fw-bold"> <%=plan._id%> </b><br/>
+          Are you sure?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <form action="/deletePlan/<%=plan._id%>?_method=DELETE" method="POST" class="position-relative">
+          <button type="submit" class="btn btn-primary">Yes, Remove Plan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div>
+
+<%- include('partials/footer')%>

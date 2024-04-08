@@ -1,0 +1,112 @@
+@media(max-width:768px){
+    .nav-area{
+        width: 70%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 5000;
+        display: none;
+    }
+    .dropdown-menu-icon{
+        position: absolute;
+        right: 0;
+    }
+    .nav-area-links{
+        position: absolute;
+        top: 120px;
+        display: block;
+        /* bottom: 70px; */
+        /* overflow-x: auto; */
+    }
+    .place-trade, .economic-call{
+        display: none;
+    }
+    .place-trade-area{
+        min-height: 50px;
+        padding:10px 0;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+    }
+    .place-trade-center{
+        height: 100%;
+        padding:70px 0 0 0;
+        width: 100%;
+        position: fixed;
+        z-index: 5000;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        opacity: 0.85;
+    }
+    .economic-cal{
+        height: 100%;
+        padding:40px 0 0 0;
+        width: 100%;
+        position: fixed;
+        z-index: 5000;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        opacity: 0.9;
+    }
+    .menu-tog .fas{
+        padding: 25px 0;
+        font-size: 20px;
+    }
+    /*.my-autro{*/
+    /*    position: absolute;*/
+    /*    bottom: 50px;*/
+    /*}*/
+    /*.nav-menu .nav{*/
+    /*    line-height: 30px;*/
+    /*}*/
+    /*#nav-m .nav-link{*/
+    /*    color: #222;*/
+    /*}*/
+    /*.drp{*/
+    /*    display: none;*/
+    /*}*/
+    .push-down{
+        margin: 10px 0;
+        display: none;
+    }
+    .banner img{
+        height: 250px;
+        width: 100%;
+    }
+    .banner-overlay-text{
+        height: 250px;
+        width: 100%;
+    }
+    .toggle {
+        margin:10px -20px;
+    }
+    .toggle-navv{
+        padding: 0 20px;
+        cursor: pointer;
+        display: block !important;
+    }
+    .main-area{
+        width: 100%;
+    }
+    .nav-area-header{
+        padding: 30px 20px;
+        top: 20px;
+    }
+    .hide-mob{
+        display: none;
+    }
+    .show-mob{
+        display: block !important;
+    }
+}
