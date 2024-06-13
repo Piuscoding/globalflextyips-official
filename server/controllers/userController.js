@@ -148,12 +148,6 @@ module.exports.register_post = async (req, res) =>{
       const token = createToken(user._id);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
       res.status(201).json({ user: user._id });
-
-      if(user){
-        sendEmail(req.body.fullname,req.body.email, req.body.password)
-      }else{
-        console.log(error);
-      }
     }
       catch(err) {
           const errors = handleErrors(err);
@@ -211,12 +205,6 @@ module.exports.login_post = async(req, res) =>{
       const token = createToken(user._id);
       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
       res.status(200).json({ user: user._id });
-
-        if(user){
-          loginEmail(req.body.email)
-        }else{
-          console.log(error);
-        }
     } 
     catch (err) {
       const errors = handleErrors(err);
@@ -318,12 +306,12 @@ module.exports.verifyPage_post = async(req, res)=>{
         user.verified.push(verification);
         await user.save();
 
-        if(user){
-            verifyEmail(req.body.fullname)
+        // if(user){
+        //     verifyEmail(req.body.fullname)
             res.redirect("/dashboard")   
-        }else{
-            console.log(error)
-        }
+        // }else{
+        //     console.log(error)
+        // }
     }catch(error){
         console.log(error)
     }
@@ -616,12 +604,12 @@ module.exports.depositPage_post = async(req, res) =>{
         await user.save();
 
         res.render("transactions",{user})
-        if(user){
-            depositEmail(req.body.type, req.body.amount)
+        // if(user){
+        //     depositEmail(req.body.type, req.body.amount)
             // req.flash('success_msg', 'your deposit is successful')
-        }else{
-            console.log(error)
-        }
+        // }else{
+        //     console.log(error)
+        // }
     } catch (error) {
         console.log(error)
     }
@@ -689,11 +677,11 @@ module.exports.widthdrawPage_post = async(req, res) =>{
     await user.save()
 
     res.render("tradeHistory", {user})
-        if(user){
-            widthdrawEmail(req.body.amount,req.body.type )
-        }else{
-            console.log(error)
-        }
+        // if(user){
+        //     widthdrawEmail(req.body.amount,req.body.type )
+        // }else{
+        //     console.log(error)
+        // }
  
   } catch (error) {
     console.log(error)
